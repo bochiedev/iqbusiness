@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+
+    <!-- Hero Section Start -->
+    <div class="hero-section section" >
+
+        <!-- Hero Slider One -->
+        <div class="hero-slider hero-slider-one">
+
+            <!-- Hero Slide Item -->
+
+
+            {% for event in events %}
+
+            <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/1.jpg)">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Hero One Content Start -->
+                        <div class="hero-one-content text-center col-12">
+
+                            <h2>{{ event.category }}</h2>
+                            <h1>{{ event.name }}</h1>
+                            <h3>{{ event.date }}</h3>
+                            <a href="event-form.php?event=<?php echo $events['id']; ?>" class="btn btn-light-outline btn-hover-red-outline">Book Ticket</a>
+
+                        </div><!-- Hero One Content End -->
+
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+
+            <!-- Hero Slide Item -->
+            <!-- <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/2.jpg)">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="hero-one-content text-center col-12">
+
+                            <h2>7th Biggest</h2>
+                            <h1>Business Conference 2018.</h1>
+                            <h3>11 to 13 February, 2018</h3>
+                            <a href="pricing.html" class="btn btn-light-outline btn-hover-red-outline">Buy Ticket</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Hero Slide Item -->
+            <!-- <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/home-3.jpg)">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="hero-one-content text-center col-12">
+
+                            <h2>7th Biggest</h2>
+                            <h1>Business Conference 2018.</h1>
+                            <h3>11 to 13 February, 2018</h3>
+                            <a href="pricing.html" class="btn btn-light-outline btn-hover-red-outline">Buy Ticket</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <div id="about-section" class="about-section section pt-120">
+        <div class="container">
+            <div class="row">
+
+                <!-- About Image -->
+                <div class="about-image-four col-lg-6 col-12 mb-30">
+                    <img src="{{MEDIA_URL}}img/about/about-4.jpg" alt="about">
+                </div>
+
+                <!-- About Content -->
+                <div class="about-content-one col-lg-6 col-12">
+
+                    <h1>Welcome!</h1>
+                    <h4>To <span> IQ-Business</span></h4>
+                    <h4 class="strong"></h4>
+                    <h5 class="strong">We Are.</h5>
+                    <p>
+                      We are an International affiliated business intelligence company that provides
+                      you with business solutions facing your organisation both regionally and internationally,
+                      by meeting your day to day needs to stay a head of your competition.
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+
+
+    <!-- Partners Section Start -->
+    <div class="partners-section section bg-light-gray pt-120 pb-90">
+        <div class="container">
+
+            <!-- Section Title Style One -->
+            <div class="row">
+                <div class="section-title-one text-center col pb-70">
+                    <h1>IQ Global Partners</h1>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> -->
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <!-- Partner Tab Content Start -->
+                <div class="partner-tab-content tab-content col-12">
+
+                    <!-- Partner Tab Pane Start -->
+                    <div class="partner-tab-pane text-center tab-pane fade show active" id="glod-sponsor">
+                        <div class="row">
+
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/pecb.jpg" alt="partners"></div>
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/gafm.jpg" alt="partners"></div>
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/IHRM.png" alt="partners"></div>
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/hrci.jpg" alt="partners"></div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Partners Section End -->
+
+
+
+    <!-- Video & Join Section Start -->
+    <div class="video-join-section section overlay-gradient overlay-opacity-70 pt-85 pb-100" style="background-image: url({{MEDIA_URL}}img/bg/video-join.jpg)">
+        <div class="container">
+            <div class="row flex-row-reverse">
+
+
+              {% for event in events|slice:":1" %}
+
+                <!-- Join Form Start -->
+                <div class="join-form col-xl-5 col-lg-6 col-12">
+
+                    <!-- Join Form Wrapper Start -->
+                    <div class="join-form-wrapper">
+
+                        <h2>Get your seat Now!</h2>
+                        <!-- <p>This place is free for you to reachers your business with Skill Business Man.</p> -->
+
+                        <!-- Form Start -->
+                        <form action="#" id="join-form" class="row">
+                            <div class="col-12">
+                                <a href="event-form.php?event=<?php echo $events['id']; ?>" class="btn btn-blue-outline btn-hover-red-outline">Book Now</a>
+
+                                <!-- Extra Info -->
+                                <div class="extra-info ">
+                                    <p><a href="contact.php">Need any Help?</a></p>
+                                </div>
+
+                            </div>
+
+                        </form><!-- Form End -->
+
+                    </div><!-- Join Form Wrapper End -->
+
+                </div><!-- Join Form End -->
+
+                <!-- Video Content Start -->
+                <div class="video-content col-xl-7 col-lg-6 col-12">
+
+                    <h1>{{ event.name }}</h1>
+                    <p><b>Happening on: </b>{{ event.date }}.</p>
+                    <!-- <a href="https://www.youtube.com/watch?v=kuceVNBTJio" class="play-video video-popup"> <img src="{{MEDIA_URL}}img/icons/play-white.png" alt="play"> <span>Play This Video</span> </a> -->
+
+                </div>
+                <!-- Video Content End -->
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Video & Join Section End -->
+
+
+
+    <!-- Gallery Section Start -->
+    <div class="gallery-section section pt-120 pb-90">
+        <div class="container">
+
+            <!-- Section Title Style One -->
+            <div class="row">
+                <div class="section-title-one text-center col pb-70">
+                    <h1>Our Previous Events</h1>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> -->
+                </div>
+            </div>
+
+            <!-- Gallery Wrapper -->
+            <div class="gallery-wrapper row">
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/1.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/1.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/2.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/2.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/3.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/3.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/4.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/4.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/5.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/5.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+                <!-- Single Gallery -->
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <a href="{{MEDIA_URL}}img/gallery/6.jpg" class="single-gallery image-popup"><img src="{{MEDIA_URL}}img/gallery/6.jpg" alt="gallery"> <div class="hover"></div></a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Gallery Section End -->
+
+
+    <!-- Partners Section Start -->
+    <div class="partners-section section bg-light-gray pt-120 pb-90">
+        <div class="container">
+
+            <!-- Section Title Style One -->
+            <div class="row">
+                <div class="section-title-one text-center col pb-70">
+                    <h1>Accreditation</h1>
+                    <p>
+                      IQ GLOBAL IS
+                      NOW ACCREDITED BY THE NATIONAL INDUSTRIAL TRAINING AUTHORITY
+                      UNDER NITA/TRN/976 ON THE FOLLOWING AREAS OF TRAINING:
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+
+
+                 <div class="col-lg-12 col-md-12 col-12">
+
+                     <ul class="list-arrow-double home-acc">
+                         <li style="top:13px">HUMAN RESOURCE MANAGEMENT.</li>
+                         <li>BUSINESS MANAGEMENT.</li>
+                         <li>FINANCIAL MANAGEMENT.</li>
+                         <li>ENTREPRISE RISK MANAGEMENT.</li>
+                         <li>PROJECT MANAGEMENT.</li>
+                         <li>CORPORATE GOVERNANCE.</li>
+                     </ul>
+
+                 </div>
+               </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- Partners Section End -->
+
+
+
+    <!-- CTA Section Start -->
+    <div class="cta-section section overlay-blue overlay-opacity-70 pt-100 pb-110" style="background-image: url({{MEDIA_URL}}img/bg/cta.jpg)">
+        <div class="container">
+            <div class="row">
+
+                <!-- Event One Tab Content Start -->
+                <div class="cta-content white text-center col-12">
+                    <h1 style="margin-top:-40px">Testimonials</h1>
+                    <!-- Testimonials -->
+                    <div class="gallery-wrapper row" style="padding:40px 0">
+                        <div class="col-lg-4 col-md-6 col-12 mb-30">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
+                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                            </blockquote>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-30">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
+                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                            </blockquote>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-30">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
+                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+{% endblock %}
