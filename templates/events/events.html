@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+
+
+    <!-- Page Banner Section Start -->
+    <div class="page-banner-section section overlay-gradient overlay-opacity-90" style="background-image: url(img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+
+                <!-- Page Banner Content Start -->
+                <div class="page-banner-content col">
+                    <h1>event schedule</h1>
+                    <p>Event for Business Improvement, For you Privet Ltd Business.</p>
+
+                    <!-- Breadcrumb -->
+                    <ul class="breadcrumb">
+                        <li><a href="index.php">home</a></li>
+                        <li><a href="#">event schedule</a></li>
+                    </ul>
+
+                </div><!-- Page Banner Content End -->
+
+            </div>
+        </div>
+    </div><!-- Page Banner Section End -->
+
+    <!-- Event Schedule Section Start -->
+    <div class="event-schedule-section-one section pt-120 pb-120">
+        <div class="container">
+
+            <!-- Section Title Style One -->
+            <div class="row">
+                <div class="section-title-one text-center col pb-150">
+                    <h1>Events</h1>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <!-- Event One Tab List Start -->
+
+
+                <div class="col-12">
+                    <div class="event-one-schedule-tab-list nav">
+                        <style>.event-one-schedule-tab-list>a:hover {background-color: rgba(0,0,0,0.2)} </style>
+
+                        {% for category in category_list %}
+                        <a  {% if forloop.first %} class="active hover" {% else %}  class="hover" {% endif %} data-toggle="tab" href="#{{ category.name }}"> <h3>{{ category.name }}</h3> <span>View</span> </a>
+
+
+                        {% endfor %}
+
+
+                        <!-- <a class="active hover" data-toggle="tab" href="#conference"> <h3>Conferences</h3> <span>View</span> </a>
+                        <a data-toggle="tab" href="#certifications"> <h3>Certifications</h3> <span>View</span> </a>
+                        <a data-toggle="tab" href="#training"> <h3>Training</h3> <span>View</span> </a> -->
+
+                    </div>
+                </div><!-- Event One Tab List End -->
+
+                <!-- Event One Tab Content Start -->
+                <div class="event-one-schedule-tab-content tab-content col-12">
+
+                  {% for event in event_list %}
+
+
+
+                                      <!-- Event One Tab Pane Start -->
+                                      <div class="event-one-schedule-tab-pane tab-pane fade show active" id="{{ event.category.name }}">
+
+                                          <!-- Event One List Start-->
+                                          <ul class="event-one-schedule-list">
+
+                                              <!-- Event One Single Event Start-->
+                                              <li class="event-one-single-schedule">
+
+                                                  <!-- Day & Time -->
+                                                  <div class="day-time float-left">
+                                                      <h5>{{ event.date }}</h5>
+                                                      <h4>{{ event.venue }}</h4>
+                                                  </div>
+
+                                                  <!-- Category & Title -->
+                                                  <div class="category-title float-left">
+                                                      <h5><a href="#">{{ event.category.name }}</a></h5>
+                                                      <h4><a href="#">{{ event.name }}</a></h4>
+                                                  </div>
+
+                                                  <!-- Organizer -->
+                                                  <!-- <div class="organizer float-left">
+                                                      <h5>Business Expert</h5>
+                                                      <h4><a href="speaker-profile.html">Jone Vinch</a></h4>
+                                                  </div> -->
+
+                                                  <!-- Buy Button -->
+                                                  <div class="buy-button float-left">
+                                                      <a href="{% url 'events:event_form' event.slug %}" class="btn btn-light-blue-outline btn-hover-red-outline">View Details</a>
+                                                  </div>
+
+                                              </li><!-- Event One Single Event End-->
+
+
+                                          </ul><!-- Event One List End-->
+
+                                      </div><!-- Event One Tab Pane End -->
+                    {% endfor %}
+
+            </div>
+
+            <div class="col-12 justify-content-center">
+
+            {% include 'includes/pagination.html' %}
+          </div>
+
+
+
+        </div>
+    </div><!-- Event Schedule Section End -->
+
+
+  </div>
+
+{% endblock %}

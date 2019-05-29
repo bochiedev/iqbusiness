@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+
+
+    <!-- Page Banner Section Start -->
+    <div class="page-banner-section section overlay-gradient overlay-opacity-90" style="background-image: url(img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+
+                <!-- Page Banner Content Start -->
+                <div class="page-banner-content col">
+                    <h1>Contact us</h1>
+                    <p>Event for Business Improvement, For you Privet Ltd Business.</p>
+
+                    <!-- Breadcrumb -->
+                    <ul class="breadcrumb">
+                        <li><a href="index.php">home</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+
+                </div><!-- Page Banner Content End -->
+
+            </div>
+        </div>
+    </div><!-- Page Banner Section End -->
+
+
+
+    <!-- Contact Info & Form Section Start -->
+    <div class="contact-info-form-section section bg-light-gray fix">
+        <div class="container">
+            <div class="row">
+
+                <!-- Contact Info -->
+                <div class="contact-info col-lg-6 col-12">
+                    <div class="contact-info-wrapper fix">
+
+                        <!-- Title -->
+                        <div class="contact-title">
+                            <h2>Contact Information</h2>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
+                        </div>
+
+                        <!-- Info -->
+                        <div class="info">
+                            <p><strong>Address:</strong> <span>Nairobi Kenya.</span></p>
+                            <p><strong>Phone:</strong> <span>+253 732545 666
+                              <!-- <br>+1 2236 5226 111 -->
+                            </span></p>
+                            <p><strong>E-mail:</strong> <span>info@iqbusiness.events
+                              <!-- <br>company@domain.info -->
+                            </span></p>
+                        </div>
+
+                        <!-- Social -->
+                        <div class="social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form col-lg-6 col-12">
+                    <div class="contact-form-wrapper">
+
+                        <!-- Title -->
+                        <div class="contact-title">
+                            <h2>Contact Form</h2>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="contact_form" action="contact.php" method="post">
+                            <input type="text"  name="name" placeholder="Name*" required>
+                            <input type="email"  name="email" placeholder="E-mail*" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
+                            <textarea name="message" placeholder="Message" required></textarea>
+                            <input type="submit" name="submit" value="submit">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div><!-- Contact Info & Form Section End -->
+
+
+
+
+{% endblock %}

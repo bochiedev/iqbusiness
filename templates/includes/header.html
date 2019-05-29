@@ -6,7 +6,7 @@
             <!-- Header Logo -->
             <div class="header-logo col-lg-3 col-md-6 col-6">
 
-                <a href="index.php" class="logo">
+                <a href="{% url 'home' %}" class="logo">
                     <img src="{{MEDIA_URL}}img/logo.png" alt="logo">
                 </a>
 
@@ -18,10 +18,16 @@
 
                 <nav id="menu">
                     <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Contact</a></li>
+                        {% url 'home' as home %}
+                        {% url 'about' as about %}
+                        {% url 'contact' as contact %}
+                        {% url 'events:event_list' as event %}
+
+
+                        <li {% if request.path == home %} class="active" {%endif%}><a href="{% url 'home' %}">Home</a></li>
+                        <li {% if request.path == about %} class="active" {%endif%}><a href="{% url 'about' %}">About us</a></li>
+                        <li {% if request.path == event %} class="active" {%endif%}><a href="{% url 'events:event_list' %}">Events</a></li>
+                        <li {% if request.path == contact %} class="active" {%endif%}><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </nav>
 

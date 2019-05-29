@@ -33,7 +33,7 @@ MESSAGE_TAGS = {
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.iqbusiness.events'
 EMAIL_HOST_USER = 'support@iqbusiness.events'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'A-7i}v}Z+=E='
 EMAIL_PORT = 587
 
 
@@ -52,6 +52,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

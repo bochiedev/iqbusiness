@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+{% load widget_tweaks %}
+
+
+
+    <!-- Page Banner Section Start -->
+    <div class="page-banner-section section overlay-gradient overlay-opacity-90" style="background-image: url(img/bg/page-banner.jpg); height:150px;">
+        <div class="container">
+            <div class="row">
+
+                <!-- Page Banner Content Start -->
+                <div class="page-banner-content col">
+                    <h1>Attendee Form</h1>
+                    <p>Help us serve you better.</p>
+
+                    <!-- Breadcrumb -->
+                    <!-- <ul class="breadcrumb">
+                        <li><a href="index.php">home</a></li>
+                        <li><a href="event-details.php">event details</a></li>
+                    </ul> -->
+
+                </div><!-- Page Banner Content End -->
+
+            </div>
+        </div>
+    </div><!-- Page Banner Section End -->
+
+    <!-- Single Event Section Start -->
+    <div class="single-event-section section pt-40 pb-40">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Event Wrapper -->
+                <div class="single-event-wrapper col-lg-12 col-12 ">
+
+
+                         <!-- Title -->
+                         <h2 class="title">{{ event.name }}</h2>
+
+                         <!-- Meta -->
+                         <div class="meta fix">
+
+                             <a href="#"><i class="pe-7s-map-marker"></i><span>{{ event.venue }}</span></a>
+                             <a href="#"><i class="pe-7s-date"></i><span>{{ event.date }}</span></a>
+                             <a href="#"><i class="pe-7s-ticket"></i><span>{{ event.category }}</span></a>
+
+                         </div>
+
+
+
+
+
+                    <!-- Title -->
+                    <!-- <h2 class="title">Business Conference - World Training 2018.</h2> -->
+
+                    <!-- Meta -->
+                    <!-- <div class="meta fix">
+
+                        <a href="#"><i class="pe-7s-map-marker"></i><span>Mombasa, Kenya</span></a>
+                        <a href="#"><i class="pe-7s-date"></i><span>2018, February 13</span></a>
+                        <a href="#"><i class="pe-7s-ticket"></i><span>Business Training</span></a>
+
+                    </div>
+
+                    <div class="event-time-banner">
+                        <div class="banner text-center overlay-blue overlay-opacity-90" style="background-image: url(img/event/event-time-banner.jpg)">
+                            <h1>“08  Days to go”</h1>
+                            <h4>Collect  your ticket & Group your business.</h4>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                    <!-- Ticket Form -->
+                    <div class="ticket-form">
+
+                        <form action="" method="post" enctype="multipart/form-data" >
+                          {% csrf_token %}
+                            <div class="input">
+                                {% include 'includes/widget_tweaks_form.html' with field=form.first_name %}
+                            </div>
+                            <div class="input">
+                                {% include 'includes/widget_tweaks_form.html' with field=form.last_name %}
+                            </div>
+                            <div class="input">
+                              {% include 'includes/widget_tweaks_form.html' with field=form.email %}
+                            </div>
+                            <div class="input">
+                                {% include 'includes/widget_tweaks_form.html' with field=form.phone %}
+                            </div>
+                            <div class="input">
+                                {% include 'includes/widget_tweaks_form.html' with field=form.organization %}
+                            </div>
+                            <div class="input">
+                                <input type="submit" value="Submit" name="submit">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="event-time-banner">
+                        <div class="banner text-center overlay-blue overlay-opacity-90" style="background-image: url(img/event/event-time-banner.jpg)">
+                            <h1>“<? echo $days; ?> to go”</h1>
+                            <h4>Collect  your ticket & Group your business.</h4>
+                        </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Single Event Section End -->
+
+
+
+{% endblock %}

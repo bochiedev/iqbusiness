@@ -13,17 +13,17 @@
 
             {% for event in events %}
 
-            <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/1.jpg)">
+            <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/3.jpg)">
                 <div class="container">
                     <div class="row">
 
                         <!-- Hero One Content Start -->
                         <div class="hero-one-content text-center col-12">
 
-                            <h2>{{ event.category }}</h2>
+                            <h2>{{ event.category.name }}</h2>
                             <h1>{{ event.name }}</h1>
                             <h3>{{ event.date }}</h3>
-                            <a href="event-form.php?event=<?php echo $events['id']; ?>" class="btn btn-light-outline btn-hover-red-outline">Book Ticket</a>
+                            <a href="{% url 'events:event_form' event.slug %}" class="btn btn-light-outline btn-hover-red-outline">Book Ticket</a>
 
                         </div><!-- Hero One Content End -->
 
@@ -146,57 +146,7 @@
 
 
 
-    <!-- Video & Join Section Start -->
-    <div class="video-join-section section overlay-gradient overlay-opacity-70 pt-85 pb-100" style="background-image: url({{MEDIA_URL}}img/bg/video-join.jpg)">
-        <div class="container">
-            <div class="row flex-row-reverse">
 
-
-              {% for event in events|slice:":1" %}
-
-                <!-- Join Form Start -->
-                <div class="join-form col-xl-5 col-lg-6 col-12">
-
-                    <!-- Join Form Wrapper Start -->
-                    <div class="join-form-wrapper">
-
-                        <h2>Get your seat Now!</h2>
-                        <!-- <p>This place is free for you to reachers your business with Skill Business Man.</p> -->
-
-                        <!-- Form Start -->
-                        <form action="#" id="join-form" class="row">
-                            <div class="col-12">
-                                <a href="event-form.php?event=<?php echo $events['id']; ?>" class="btn btn-blue-outline btn-hover-red-outline">Book Now</a>
-
-                                <!-- Extra Info -->
-                                <div class="extra-info ">
-                                    <p><a href="contact.php">Need any Help?</a></p>
-                                </div>
-
-                            </div>
-
-                        </form><!-- Form End -->
-
-                    </div><!-- Join Form Wrapper End -->
-
-                </div><!-- Join Form End -->
-
-                <!-- Video Content Start -->
-                <div class="video-content col-xl-7 col-lg-6 col-12">
-
-                    <h1>{{ event.name }}</h1>
-                    <p><b>Happening on: </b>{{ event.date }}.</p>
-                    <!-- <a href="https://www.youtube.com/watch?v=kuceVNBTJio" class="play-video video-popup"> <img src="{{MEDIA_URL}}img/icons/play-white.png" alt="play"> <span>Play This Video</span> </a> -->
-
-                </div>
-                <!-- Video Content End -->
-
-                {% endfor %}
-
-            </div>
-        </div>
-    </div>
-    <!-- Video & Join Section End -->
 
 
 
