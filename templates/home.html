@@ -22,7 +22,7 @@
 
                             <h2>{{ event.category.name }}</h2>
                             <h1>{{ event.name }}</h1>
-                            <h3>{{ event.date }}</h3>
+                            <h3>{{ event.date_from }} to {{ event.date_to }}</h3>
                             <a href="{% url 'events:event_form' event.slug %}" class="btn btn-light-outline btn-hover-red-outline">Book Ticket</a>
 
                         </div><!-- Hero One Content End -->

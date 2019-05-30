@@ -5,7 +5,7 @@
 
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section overlay-gradient overlay-opacity-90" style="background-image: url(img/bg/page-banner.jpg)">
+    <div class="page-banner-section section overlay-gradient overlay-opacity-90" style="background-image: url({{MEDIA_URL}}/img/bg/page-banner.jpg)">
         <div class="container">
             <div class="row">
 
@@ -43,7 +43,7 @@
                     <div class="meta fix">
 
                         <a href="#"><i class="pe-7s-map-marker"></i><span>{{ event.venue }}</span></a>
-                        <a href="#"><i class="pe-7s-date"></i><span>{{ event.date }}</span></a>
+                        <a href="#"><i class="pe-7s-date"></i><span>{{ event.date_from }} to {{ event.date_to }}</span></a>
                         <a href="#"><i class="pe-7s-ticket"></i><span>{{ event.category.name }}</span></a>
 
                     </div>
@@ -51,7 +51,7 @@
                     <!-- Image -->
                     <div class="image">
                         <div class="image-slider">
-                            <img src="img/event/event-detail-1.jpg" alt="Event Detail">
+                            <img src="{{MEDIA_URL}}img/event/event-detail-1.jpg" alt="Event Detail">
                             <!-- <img src="img/event/event-detail-2.jpg" alt="Event Detail"> -->
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="sidebar-schedule-download">
 
                             <div class="download text-light" style="background:#007bff;" >
-                              <a href="application.php"><strong>Have an Online signature?</strong></a>
+                              <a href="#"><strong>Have an Online signature?</strong></a>
                                 |
                               <a href="#"><strong>Download PDF</strong></a>
                             </div>
@@ -78,7 +78,7 @@
 
 
                     <!-- Ticket Form -->
-                    <!-- <div class="ticket-form">
+                    <div class="ticket-form">
 
                         <form action="#">
                             <div class="input">
@@ -92,7 +92,7 @@
                             <div class="input">
                                 <select>
                                     <option>Price Plan</option>
-                                    <option>Besic</option>
+                                    <option>Basic</option>
                                     <option>Standard</option>
                                     <option>Premium</option>
                                 </select>
@@ -111,7 +111,7 @@
                                 <input type="submit" value="Book ticket">
                             </div>
                         </form>
-                    </div> -->
+                    </div>
 
                     <!-- Description -->
                     <div class="description fix">
@@ -202,7 +202,7 @@
 
 
                             <div class="event">
-                                <a href="{% url 'events:event_detail' event.slug %}" class="image float-left"><img src="img/event/sidebar-event-1.jpg" alt="event"></a>
+                                <a href="{% url 'events:event_detail' event.slug %}" class="image float-left"><img src="{{MEDIA_URL}}img/event/sidebar-event-1.jpg" alt="event"></a>
                                 <div class="content fix">
                                     <h5><a href="{% url 'events:event_detail' event.slug %}">{{ event.name }}.</a></h5>
                                     <span>{{ event.venue }}</span>

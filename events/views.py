@@ -4,10 +4,6 @@ from events.models import Event, Category
 from events.forms import EventForm
 from iqbusiness.utils import send_email
 
-from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse
-from django.template.loader import render_to_string
-from weasyprint import HTML
 
 
 # Create your views here.
@@ -23,7 +19,7 @@ class EventListView(ListView):
         events['category_list'] = Category.objects.all()
         return events
     def get_queryset(self):
-        return self.model.objects.all().order_by('date')
+        return self.model.objects.all().order_by('date_from')
 
 class EventDetailView(DetailView):
     model = Event
@@ -56,22 +52,3 @@ class EventFormView(FormView):
     def send_mail(self, valid_data):
         sent = send_email('Attendee Information', 'support@iqbusiness.events' , ['bochiegfx@gmail.com'], 'includes/mail_templates/attendee_template.html', valid_data)
         return sent
-
-
-
-
-def html_to_pdf_view(request):
-
-    paragraphs = ['first paragraph', 'second paragraph', 'third paragraph']
-    html_string = render_to_string('includes/mail_templates/application_template.html', {'paragraphs': paragraphs})
-
-    html = HTML(string=html_string)
-    html.write_pdf(target='/tmp/mypdf.pdf');
-
-    fs = FileSystemStorage('/tmp')
-    with fs.open('mypdf.pdf') as pdf:
-        response = HttpResponse(pdf, content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="mypdf.pdf"'
-        return response
-
-    return response

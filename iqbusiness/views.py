@@ -8,7 +8,7 @@ from events.models import Event
 class HomeView(View):
     def get(self, request):
         hello = "Hello world"
-        events_list = Event.objects.all().order_by('-date')[:3]
+        events_list = Event.objects.all().order_by('-date_from')[:3]
         return render(request, 'home.html', {'hello': hello, 'events':events_list})
 
 class AboutView(View):
