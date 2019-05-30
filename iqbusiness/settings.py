@@ -102,19 +102,36 @@ WSGI_APPLICATION = 'iqbusiness.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-  'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'iq_records',
-      'USER': 'root',
-      'PASSWORD': '',
-      'HOST': '127.0.0.1',
-      'PORT': '3306',
-      'OPTIONS': {
-          'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-      }
-  }
-}
+if DEBUG:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'iq_records',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+                    'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+                    }
+        }
+    }
+
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'iqbuyifa_iq_business',
+        'USER': 'iqbuyifa_iqbuyifa',
+        'PASSWORD': 'HxvHP-~HklX%',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+                    'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+                    }
+        }
+    }
+
 
 
 # Password validation
@@ -154,11 +171,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
-
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+if DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+else:
+    STATIC_ROOT = '/home/iqbuyifa/public_html/static'
+    MEDIA_ROOT = '/home/iqbuyifa/public_html/media'
 
 
 STATICFILES_DIRS = (
