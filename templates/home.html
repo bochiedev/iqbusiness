@@ -13,7 +13,7 @@
 
             {% for event in events %}
 
-            <div class="item overlay-blue overlay-opacity-60" style="background-image: url({{MEDIA_URL}}img/hero/3.jpg)">
+            <div class="item overlay-blue overlay-opacity-80" style="background-image: url({{MEDIA_URL}}{{ event.image }})">
                 <div class="container">
                     <div class="row">
 
@@ -22,7 +22,7 @@
 
                             <h2>{{ event.category.name }}</h2>
                             <h1>{{ event.name }}</h1>
-                            <h3>{{ event.date_from }} to {{ event.date_to }}</h3>
+                            <h3>{{ event.d_from }} to {{ event.d_to }}</h3>
                             <a href="{% url 'events:event_form' event.slug %}" class="btn btn-light-outline btn-hover-red-outline">Book Ticket</a>
 
                         </div><!-- Hero One Content End -->
@@ -87,14 +87,26 @@
                 <div class="about-content-one col-lg-6 col-12">
 
                     <h1>Welcome!</h1>
-                    <h4>To <span> IQ-Business</span></h4>
+                    <h4>To <span> IQ Business Training & Consulting</span></h4>
                     <h4 class="strong"></h4>
                     <h5 class="strong">We Are.</h5>
                     <p>
-                      We are an International affiliated business intelligence company that provides
-                      you with business solutions facing your organisation both regionally and internationally,
-                      by meeting your day to day needs to stay a head of your competition.
+
+                    We at <b>IQ Business Training & Consulting</b> are a family whose only purpose is to be your trusted go to for all matters capacity building and corporate training.
+                    Based in Nairobi, Kenya we've enjoyed a regional presence initially as a consulting partner later diversifying our expertise into the vast world of corporate development.
                     </p>
+                    <p>
+                    <b>Our vision</b> is borne by the continued and rapid growth of the African workspace and the development
+                     of international best practices towards workplace wellness.
+                     </p>
+                     <p>
+
+                      With the diverse nature of our clients and partners industrial scope, our portfolio touches on; Health and Safety, Oil, Gas and Renewable Energy, Leadership and Organizational Development, Business operations, Strategic Human Resource, Logistics and Supply Chain Management, Healthcare, Banking, Finance and Information Technology.
+                    </p>
+
+                     <p>
+                       <b>IQ Business Training & Consulting</b> places skills improvement and career advancement training at the heart of its cradle, we’re endeared with the crucial mission of putting the client first as they achieve excellence, quality & innovation.
+                     </p>
 
 
                 </div>
@@ -112,7 +124,7 @@
             <!-- Section Title Style One -->
             <div class="row">
                 <div class="section-title-one text-center col pb-70">
-                    <h1>IQ Global Partners</h1>
+                    <h1>IQ Business Training & Consulting Partners</h1>
                     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> -->
                 </div>
             </div>
@@ -127,10 +139,10 @@
                     <div class="partner-tab-pane text-center tab-pane fade show active" id="glod-sponsor">
                         <div class="row">
 
-                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/pecb.jpg" alt="partners"></div>
-                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/gafm.jpg" alt="partners"></div>
-                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/IHRM.png" alt="partners"></div>
-                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/hrci.jpg" alt="partners"></div>
+                            <!-- <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/pecb.jpg" alt="partners"></div> -->
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/iil.png" alt="partners"></div>
+                            <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/richemele.png" alt="partners"></div>
+                            <!-- <div class="single-partner mb-30"><img src="{{MEDIA_URL}}img/partners/hrci.jpg" alt="partners"></div> -->
 
                         </div>
                     </div>
@@ -212,15 +224,14 @@
                 <div class="section-title-one text-center col pb-70">
                     <h1>Accreditation</h1>
                     <p>
-                      IQ GLOBAL IS
+                      IQ Business Training & Consulting IS
                       NOW ACCREDITED BY THE NATIONAL INDUSTRIAL TRAINING AUTHORITY
-                      UNDER NITA/TRN/976 ON THE FOLLOWING AREAS OF TRAINING:
 
                     </p>
                 </div>
             </div>
 
-            <div class="container">
+            <!-- <div class="container">
               <div class="row">
 
 
@@ -238,7 +249,7 @@
                  </div>
                </div>
 
-            </div>
+            </div> -->
 
 
 
@@ -255,34 +266,32 @@
 
 
 
-    <!-- CTA Section Start -->
+      <!--  CTA Section Start -->
     <div class="cta-section section overlay-blue overlay-opacity-70 pt-100 pb-110" style="background-image: url({{MEDIA_URL}}img/bg/cta.jpg)">
         <div class="container">
             <div class="row">
 
-                <!-- Event One Tab Content Start -->
                 <div class="cta-content white text-center col-12">
                     <h1 style="margin-top:-40px">Testimonials</h1>
-                    <!-- Testimonials -->
                     <div class="gallery-wrapper row" style="padding:40px 0">
                         <div class="col-lg-4 col-md-6 col-12 mb-30">
                             <blockquote class="blockquote">
-                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
-                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                                <p class="mb-0">Quite educative and interesting.</p>
+                                <footer class="blockquote-footer text-yellow">–OzorChinendu,  <cite title="Source Title">Head Corporate Services Delloitte Nigeria </cite></footer>
                             </blockquote>
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-12 mb-30">
                             <blockquote class="blockquote">
-                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
-                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                                <p class="mb-0">Acquired good deal of Best Practices.</p>
+                                <footer class="blockquote-footer text-yellow">GeteyeMekuria,  <cite title="Source Title">Head of Asset and Risk, Wegen Commercial Bank Ethiopia </cite></footer>
                             </blockquote>
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-12 mb-30">
                             <blockquote class="blockquote">
-                                <p class="mb-0">The event was well organized and the trainer explained the topics extremely well, with good use of examples.</p>
-                                <footer class="blockquote-footer text-yellow">Dativa B.J. Assenga, Finance Manager, Tanzania National Parks  <cite title="Source Title">International Financial Reporting Standards (IFRS) </cite></footer>
+                                <p class="mb-0">The trainer demonstrated high level of understanding and practical Experience.</p>
+                                <footer class="blockquote-footer text-yellow"> B. Nkhoma, <cite title="Source Title">Head of Risk NBS Bank Malawi </cite></footer>
                             </blockquote>
                         </div>
                     </div>

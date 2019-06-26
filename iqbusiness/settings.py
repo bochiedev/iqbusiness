@@ -106,7 +106,7 @@ if DEBUG:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'iq_records',
+        'NAME': 'iqbuyifa_iq_business',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',

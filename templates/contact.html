@@ -11,11 +11,11 @@
                 <!-- Page Banner Content Start -->
                 <div class="page-banner-content col">
                     <h1>Contact us</h1>
-                    <p>Event for Business Improvement, For you Privet Ltd Business.</p>
+                    <p>Event for Business Improvement.</p>
 
                     <!-- Breadcrumb -->
                     <ul class="breadcrumb">
-                        <li><a href="index.php">home</a></li>
+                        <li><a href="{% url 'home' %}">home</a></li>
                         <li><a href="#">Contact us</a></li>
                     </ul>
 
@@ -45,7 +45,7 @@
                         <!-- Info -->
                         <div class="info">
                             <p><strong>Address:</strong> <span>Nairobi Kenya.</span></p>
-                            <p><strong>Phone:</strong> <span>+253 732545 666
+                            <p><strong>Phone:</strong> <span>+254 713 050 279
                               <!-- <br>+1 2236 5226 111 -->
                             </span></p>
                             <p><strong>E-mail:</strong> <span>info@iqbusiness.events
@@ -73,7 +73,8 @@
                         </div>
 
                         <!-- Form -->
-                        <form id="contact_form" action="contact.php" method="post">
+                        <form id="contact_form" action="" method="post">
+                          {% csrf_token %}
                             <input type="text"  name="name" placeholder="Name*" required>
                             <input type="email"  name="email" placeholder="E-mail*" required>
                             <input type="text" name="subject" placeholder="Subject" required>

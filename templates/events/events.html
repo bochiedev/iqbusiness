@@ -31,7 +31,7 @@
 
             <!-- Section Title Style One -->
             <div class="row">
-                <div class="section-title-one text-center col pb-150">
+                <div class="section-title-one text-center col pb-50">
                     <h1>Events</h1>
                 </div>
             </div>
@@ -39,26 +39,7 @@
             <div class="row">
 
 
-                <!-- Event One Tab List Start -->
 
-
-                <div class="col-12">
-                    <div class="event-one-schedule-tab-list nav">
-                        <style>.event-one-schedule-tab-list>a:hover {background-color: rgba(0,0,0,0.2)} </style>
-
-                        {% for category in category_list %}
-                        <a  {% if forloop.first %} class="active hover" {% else %}  class="hover" {% endif %} data-toggle="tab" href="#{{ category.name }}"> <h3>{{ category.name }}</h3> <span>View</span> </a>
-
-
-                        {% endfor %}
-
-
-                        <!-- <a class="active hover" data-toggle="tab" href="#conference"> <h3>Conferences</h3> <span>View</span> </a>
-                        <a data-toggle="tab" href="#certifications"> <h3>Certifications</h3> <span>View</span> </a>
-                        <a data-toggle="tab" href="#training"> <h3>Training</h3> <span>View</span> </a> -->
-
-                    </div>
-                </div><!-- Event One Tab List End -->
 
                 <!-- Event One Tab Content Start -->
                 <div class="event-one-schedule-tab-content tab-content col-12">
@@ -68,19 +49,28 @@
 
 
                                       <!-- Event One Tab Pane Start -->
-                                      <div class="event-one-schedule-tab-pane tab-pane fade show active" id="{{ event.category.name }}">
+                                      <div class="event-one-schedule-tab-pane tab-pane fade show active mb-50" >
 
                                           <!-- Event One List Start-->
                                           <ul class="event-one-schedule-list">
+
+                                            <div class="image">
+                                                <div class="image-slider">
+                                                    <img src="{{MEDIA_URL}}{{event.image}}" alt="Event Detail">
+                                                </div>
+                                            </div>
 
                                               <!-- Event One Single Event Start-->
                                               <li class="event-one-single-schedule">
 
                                                   <!-- Day & Time -->
                                                   <div class="day-time float-left">
-                                                      <h5>{{ event.date_from }} to {{ event.date_to }}</h5>
+                                                      <h5>{{ event.d_from }} to {{ event.d_to }}</h5>
                                                       <h4>{{ event.venue }}</h4>
                                                   </div>
+
+
+
 
                                                   <!-- Category & Title -->
                                                   <div class="category-title float-left">
@@ -88,11 +78,6 @@
                                                       <h4><a href="#">{{ event.name }}</a></h4>
                                                   </div>
 
-                                                  <!-- Organizer -->
-                                                  <!-- <div class="organizer float-left">
-                                                      <h5>Business Expert</h5>
-                                                      <h4><a href="speaker-profile.html">Jone Vinch</a></h4>
-                                                  </div> -->
 
                                                   <!-- Buy Button -->
                                                   <div class="buy-button float-left">

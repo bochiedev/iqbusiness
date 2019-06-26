@@ -12,14 +12,14 @@ class EventListView(ListView):
     model = Event
     template_name = 'events/events.html'
     context_object_name = 'event_list'
-    paginate_by = 2
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         events = super(EventListView, self).get_context_data(**kwargs)
         events['category_list'] = Category.objects.all()
         return events
     def get_queryset(self):
-        return self.model.objects.all().order_by('date_from')
+        return self.model.objects.all().order_by('d_from')
 
 class EventDetailView(DetailView):
     model = Event

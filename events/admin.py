@@ -5,10 +5,10 @@ from events.models import Event, Category, EventForm
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['name', 'venue', 'category', 'date_from', 'date_to' , 'created_by', 'created_on', 'image']
-    list_filter = ['category', 'date_from', 'created_by', 'venue']
+    list_display = ['name', 'venue', 'category', 'd_from', 'd_to' , 'created_by', 'created_on', 'image']
+    list_filter = ['category', 'd_from', 'created_by', 'venue']
     list_editable = ['category']
-    date_hierarchy = 'date_from'
+    date_hierarchy = 'd_from'
 
 admin.site.register(Event, EventAdmin)
 
