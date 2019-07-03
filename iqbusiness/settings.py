@@ -32,8 +32,8 @@ MESSAGE_TAGS = {
 #for gmail
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.iqbusiness.events'
-EMAIL_HOST_USER = 'support@iqbusiness.events'
-EMAIL_HOST_PASSWORD = 'A-7i}v}Z+=E='
+EMAIL_HOST_USER = 'info@iqbusiness.events'
+EMAIL_HOST_PASSWORD = 'OS..DSs&hG?K'
 EMAIL_PORT = 587
 
 

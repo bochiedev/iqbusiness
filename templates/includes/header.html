@@ -22,12 +22,15 @@
                         {% url 'about' as about %}
                         {% url 'contact' as contact %}
                         {% url 'events:event_list' as event %}
+                        {% url 'events:pdf' as pdf %}
+
 
 
                         <li {% if request.path == home %} class="active" {%endif%}><a href="{% url 'home' %}">Home</a></li>
                         <li {% if request.path == about %} class="active" {%endif%}><a href="{% url 'about' %}">About us</a></li>
                         <li {% if request.path == event %} class="active" {%endif%}><a href="{% url 'events:event_list' %}">Events</a></li>
                         <li {% if request.path == contact %} class="active" {%endif%}><a href="{% url 'contact' %}">Contact</a></li>
+                        <li {% if request.path == pdf %} class="active" {%endif%}><a href="{% url 'events:pdf' pk=1 %}">pdf</a></li>
                     </ul>
                 </nav>
 

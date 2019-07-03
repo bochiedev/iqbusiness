@@ -39,6 +39,16 @@ class EventForm(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        return self.first_name
+
+class ContactForm(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    subject = models.CharField(max_length=255)
+    message = models.CharField(max_length=600)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
         return self.full_name
 
 

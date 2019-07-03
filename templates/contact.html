@@ -11,7 +11,7 @@
                 <!-- Page Banner Content Start -->
                 <div class="page-banner-content col">
                     <h1>Contact us</h1>
-                    <p>Event for Business Improvement.</p>
+                    <p></p>
 
                     <!-- Breadcrumb -->
                     <ul class="breadcrumb">
@@ -67,19 +67,21 @@
                 <div class="contact-form col-lg-6 col-12">
                     <div class="contact-form-wrapper">
 
+                      {% include 'includes/message.html'%}
                         <!-- Title -->
                         <div class="contact-title">
                             <h2>Contact Form</h2>
                         </div>
 
-                        <!-- Form -->
-                        <form id="contact_form" action="" method="post">
+                        <form id="contact_form" action="" method="post" enctype="multipart/form-data" >
                           {% csrf_token %}
-                            <input type="text"  name="name" placeholder="Name*" required>
-                            <input type="email"  name="email" placeholder="E-mail*" required>
-                            <input type="text" name="subject" placeholder="Subject" required>
-                            <textarea name="message" placeholder="Message" required></textarea>
-                            <input type="submit" name="submit" value="submit">
+
+                                {% include 'includes/contact_form.html' with field=form.full_name %}
+                                {% include 'includes/contact_form.html' with field=form.email %}
+                                {% include 'includes/contact_form.html' with field=form.subject %}
+                                {% include 'includes/contact_form.html' with field=form.message %}
+
+                                <input type="submit" value="Submit" name="submit">
                         </form>
                     </div>
                 </div>
