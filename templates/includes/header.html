@@ -30,7 +30,7 @@
                         <li {% if request.path == about %} class="active" {%endif%}><a href="{% url 'about' %}">About us</a></li>
                         <li {% if request.path == event %} class="active" {%endif%}><a href="{% url 'events:event_list' %}">Events</a></li>
                         <li {% if request.path == contact %} class="active" {%endif%}><a href="{% url 'contact' %}">Contact</a></li>
-                        <li {% if request.path == pdf %} class="active" {%endif%}><a href="{% url 'events:pdf' pk=1 %}">pdf</a></li>
+                        <li {% if request.path == pdf %} class="active" {%endif%}><a href="{% url 'events:pdf' %}">pdf</a></li>
                     </ul>
                 </nav>
 

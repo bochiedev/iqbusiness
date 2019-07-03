@@ -10,7 +10,7 @@ urlpatterns = [
     path('event/<slug:slug>', EventFormView.as_view(), name="event_form" ),
 
 
-    path('pdf/<int:pk>', MyModelImageView.as_view(), name="pdf" ),
+    path('pdf/', html_to_pdf_directly, name="pdf" ),
 
 
 
