@@ -31,17 +31,17 @@ MESSAGE_TAGS = {
 
 #for gmail
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.iqbusiness.events'
-EMAIL_HOST_USER = 'info@iqbusiness.events'
-EMAIL_HOST_PASSWORD = 'OS..DSs&hG?K'
-EMAIL_PORT = 587
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = ''
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')-huxikg8t8a52v6xftbl8(o+sr$r%ut_5qnib6&@apezfm&s6'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,9 +121,9 @@ else:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'iqbuyifa_iq_business',
-        'USER': 'iqbuyifa_iqbuyifa',
-        'PASSWORD': 'HxvHP-~HklX%',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
